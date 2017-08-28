@@ -46,7 +46,10 @@ metadata:
   name:  cr-list-all-namespaces
 rules:
 - apiGroups: [""]
-  resources: ["namespaces,pods"]
+  resources:
+    - namespaces
+    - pods
+    - events
   verbs: ["get", "list"]
 ---
 kind: ClusterRoleBinding
