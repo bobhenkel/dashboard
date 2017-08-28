@@ -52,6 +52,7 @@ rules:
     - events
   verbs:
     - get
+    - watch
     - list
 - nonResourceURLs: ["*"]
   verbs:
