@@ -49,7 +49,7 @@ rules:
   resources: ["namespaces,services"]
   verbs: ["get", "list"]
 ---
-  kind: ClusterRoleBinding
+kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1alpha1
 metadata:
   name: cr-list-all-namespaces-binding
