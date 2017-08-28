@@ -55,6 +55,26 @@ subjects:
   name: kubernetes-dashboard
   namespace: default
 ---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name:  list-namespaces-role-bob
+rules:
+- apiGroups: [""]
+  resources: ["namespaces,services"]
+  verbs: ["get", "list"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1alpha1
+metadata:
+  name: list-namespaces-dash-binding
+subjects:
+  - kind: ServiceAccount
+    name: kubernetes-dashboard
+roleRef:
+  kind: ClusterRole
+  name: list-namespaces-dash
+---
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
