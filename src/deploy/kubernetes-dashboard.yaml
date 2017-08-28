@@ -49,7 +49,10 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: default-admin-role, list-namespaces-role
+  name: default-admin-role
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: list-namespaces-role
 subjects:
 - kind: ServiceAccount
   name: kubernetes-dashboard
